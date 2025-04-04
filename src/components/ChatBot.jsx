@@ -25,7 +25,7 @@ const ChatBot = () => {
         headers: {
           "Authorization": `Bearer ${import.meta.env.VITE_API_KEY}`,
           "Content-Type": "application/json",
-          "HTTP-Referer": "http://localhost:5173/", // or your actual site URL
+          // "HTTP-Referer": "http://localhost:5173/", // or your actual site URL
           "X-Title": "AI Chat Bot", // can be anything
         },
         body: JSON.stringify({

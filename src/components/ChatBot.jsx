@@ -23,14 +23,17 @@ const ChatBot = () => {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`, // Replace with your API key
+          "Authorization": `Bearer ${import.meta.env.VITE_API_KEY}`,
           "Content-Type": "application/json",
+          // "HTTP-Referer": "http://localhost:5173/", // or your actual site URL
+          "X-Title": "AI Chat Bot", // can be anything
         },
         body: JSON.stringify({
-          model: "deepseek/deepseek-r1:free",
+          model: "openai/gpt-3.5-turbo", // use a common model for now
           messages: [{ role: "user", content: input }],
         }),
       });
+      
 
       const data = await response.json();
       const botMessage =
